@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Open-Sans, sans-serif;
+}
+
+:root {
+  --texto: #110e0e;
+  --enlace: rgb(71, 28, 168);
+  --link-active: #471ca8;
+  --link-hover: #6f42c1;
+}
+
+main {
+  height: 75dvh;
+}
+
+.navbar {
+  background-color: #5d0188;
+}
+
+.navbar-collapse {
+  background-color: #5d0188;
+}
+
+.nav-pills .nav-item .nav-link {
+  color: #fff;
+  padding: 0.6rem;
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--link-hover);
+}
+
+.navbar footer img {
+  width: 24px;
+}
