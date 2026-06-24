@@ -25,7 +25,7 @@ function login(usuario, password) {
   if(usuarioValido) {
     localStorage.setItem('usuarioLogueado', JSON.stringify({ usuario }))
     alert('Inicio de sesión existoso')
-    window.location.href = 'home.html'
+    window.location.href = '../pages/home.html'
   } else {
     alert('Usuario o contraseña incorrectos.')
   }
@@ -54,6 +54,16 @@ if(registerForm) {
 
 if(loginForm) {
   loginForm.addEventListener('submit', (e) => {
-    
+    e.preventDefault()
+
+    const usuario = document.getElementById('inputUsuario').value.trim()
+    const password = document.getElementById('inputPassword').value.trim()
+
+    if(!usuario || !password) {
+      alert('Por favor completa los campos.')
+      return
+    }
+
+    login(usuario, password)
   })
 }

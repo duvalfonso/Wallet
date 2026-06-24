@@ -38,6 +38,11 @@ h6 {
   width: 100%;
 }
 
+.btn-light {
+  border-radius: 2rem;
+  width: 100%;
+}
+
 .form-control {
   background-color: #ffffff;
   border: none;
@@ -45,7 +50,6 @@ h6 {
 }
 
 .btn-primary:hover {
-  transform: scale(1.015);
   background-color: #450463;
   border: none;
 }

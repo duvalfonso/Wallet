@@ -24,10 +24,6 @@ body {
   color: var(--texto);
 }
 
-main {
-  height: 75dvh;
-}
-
 .navbar {
   background-color: #5d0188;
 }
@@ -53,6 +49,15 @@ main .container .card {
   border-radius: 22px;
 }
 
+.contacts-slider {
+  gap: 1rem;
+  scroll-behavior: smooth;
+}
+
+.contacts-item {
+  flex: 0 0 auto;
+}
+
 .bg-theme-1 {
   background-color: #471ca8;
 }
@@ -72,6 +77,21 @@ main .container .card {
   display: inline-flex;
   color: white;
   margin-bottom: 0;
+}
+
+.avatar.avatar-80 {
+  height: 88px;
+  width: 88px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+figure > img {
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .bg-white-opacity-10 {
