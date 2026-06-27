@@ -2,32 +2,44 @@ const loginForm = document.getElementById('login-form')
 const registerForm = document.getElementById('register-form')
 
 function registrarUsuario(usuario, password) {
-  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
+  const usuarios = obtenerUsuarios()
 
   const existe = usuarios.find(u => u.usuario === usuario)
   if(existe) {
     alert('El usuario ya está registrado.')
+
     return false;
   }
 
-  usuarios.push({ usuario, password })
-  localStorage.setItem('usuarios', JSON.stringify(usuarios))
-  alert('Usuario registrado con éxito. Redirigiendo al login...')
+  const nuevoUsuario = {
+    id: Date.now(),
+    usuario,
+    password,
+    saldo: 0,
+    ingresos: 0,
+    egresos: 0,
+    movimientos: [],
+    contactos: []
+  }
+
+  usuarios.push(nuevoUsuario)
+  guardarUsuarios(usuarios)
+  mostrarAlerta("Usuario registrado con éxito. Redirigiendo al login ...")
 
   window.location.href = 'login.html'
   return true
 }
 
 function login(usuario, password) {
-  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
+  const usuarios = obtenerUsuarios()
   const usuarioValido = usuarios.find(u => u.usuario === usuario && u.password === password)
 
   if(usuarioValido) {
-    localStorage.setItem('usuarioLogueado', JSON.stringify({ usuario }))
-    alert('Inicio de sesión existoso')
+    localStorage.setItem('usuarioLogueado', usuarioValido.id)
+    mostrarAlerta("Inicio de sesión exitoso. Redireccionando ...", "success")
     window.location.href = '../pages/home.html'
   } else {
-    alert('Usuario o contraseña incorrectos.')
+    mostrarAlerta("Usuario o contraseña incorrectos", "danger")
   }
 }
 
@@ -40,11 +52,12 @@ if(registerForm) {
     const confirmPassword = document.getElementById('inputConfirmPassword').value.trim()
 
     if(!usuario || !password || !confirmPassword) {
-      alert('Por favor completa los todos campos.')
+      mostrarAlerta("Por favor completa todos los campos", "warning")
+      return
     }
 
     if(password !== confirmPassword) {
-      alert('Las contraseñas no coinciden. Por favor verifícalas.')
+      mostrarAlerta("Datos incorrectos, por favor verifiquar.", "danger")
       return
     }
 
@@ -60,7 +73,7 @@ if(loginForm) {
     const password = document.getElementById('inputPassword').value.trim()
 
     if(!usuario || !password) {
-      alert('Por favor completa los campos.')
+      mostrarAlerta("Por favor completa los campos", "warning")
       return
     }
 

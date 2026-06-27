@@ -36,7 +36,13 @@
           <label for="inputPassword" class="form-control-label">Contraseña</label>
         </div>
         <p class="text-center"><a href="" class="style-none">¿Olvidaste tu contraseña?</a></p>
-        <div class="text-center mt-5 mx-auto mb-3">
+        <div class="">
+          <div id="alertMessage" class="alert alert-dismissible fade d-none" role="alert">
+          <span id="alertText"></span>
+          <button type="button" class="btn-close" aria-label="Close" id="btnCloseAlert"></button>
+        </div>
+        </div>
+        <div class="text-center mt-4 mx-auto mb-3">
           <button type="submit" class="btn btn-lg btn-primary my-btn" id="btnLogin">Iniciar Sesión</button>
           <p class="text-secondary">No tienes una cuenta? <a href="register.html" class="style-none">Regístrate</a></p>
         </div>
@@ -47,6 +53,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
+  
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
   <script src="../js/auth.js"></script>
 </body>
 </html>

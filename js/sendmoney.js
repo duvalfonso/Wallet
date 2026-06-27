@@ -1,0 +1,7 @@
+function enviarDinero() {
+
+}
+
+function validarSaldo() {
+
+}

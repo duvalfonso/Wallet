@@ -1,46 +1,3 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Open-Sans, sans-serif;
-}
-
-:root {
-  --texto: #110e0e;
-  --enlace: rgb(71, 28, 168);
-  --link-active: #471ca8;
-  --link-hover: #6f42c1;
-  --bs-border-radius: 1.15rem;
-}
-
-body {
-  background-image: linear-gradient(
-    45deg,
-    rgb(221, 141, 208),
-    rgb(115, 191, 204)
-  );
-  color: var(--texto);
-}
-
-.navbar {
-  background-color: #5d0188;
-}
-
-.navbar-collapse {
-  background-color: #5d0188;
-}
-
-.nav-pills .nav-item .nav-link {
-  color: #fff;
-  padding: 0.6rem;
-}
-
-.nav-pills .nav-link.active {
-  background-color: var(--link-hover);
-}
-
 .numero-balance {
   font-weight: 600;
 }
@@ -96,8 +53,4 @@ figure > img {
 
 .bg-white-opacity-10 {
   background-color: hsla(0, 0%, 100%, 0.2);
-}
-
-.navbar footer img {
-  width: 24px;
 }
