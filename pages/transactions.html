@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <title>Mis movimientos</title>
+</head>
+
+<body class="container">
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <nav class="navbar navbar-expand-md w-100 navbar-dark py-2 fixed-top">
+      <div class="container-fluid px-2">
+        <a href="#" class="text-decoration-none navbar-brand">
+          <span>Billetera Digital</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-navbar"
+          aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end rounded mt-3 mt-md-0" id="header-navbar">
+          <ul class="nav nav-pills navbar-nav">
+            <li class="nav-item"><a href="#" class="nav-link active">Inicio</a></li>
+            <li class="nav-item"><a href="home.html" class="nav-link">Menu</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Nosotros</a></li>
+            <li class="nav-item"><a href="login.html" class="nav-link">Iniciar Sesion</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container-fluid mb-3">
+      <h2 class="mb-4"> Historial de movimientos</h2>
+      <div class="alert alert-dismissible fade d-none" id="alertMessage">
+        <span id="alertText"></span>
+        <button id="btnCloseAlert" class="btn-close"></button>
+      </div>
+      <div id="listaMovimientos"></div>
+    </div>
+  </main>
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-3 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">Logo</a>
+      <span class="mb-3 mb-md-0 text-body-secondary">© 2026 Duvan Alfonso</span>
+    </div>
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a href="#"><img height="24px" src="https://cdn-icons-png.flaticon.com/128/87/87390.png"alt=""></a></li>
+      <li class="ms-3"><a href="#"><img height="24px" src="https://cdn-icons-png.flaticon.com/128/1384/1384005.png"alt=""></a></li>
+    </ul>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/constants.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/transactions.js"></script>
+</body>
+
+</html>

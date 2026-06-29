@@ -12,33 +12,32 @@ function realizarDeposito() {
 
   validarMonto(monto)
   
-  usuario.saldo += monto
-  usuario.ingresos += monto
+  actualizarSaldo(usuario, monto, "deposito")
   
-  usuario.movimientos.push({
-    tipo: "Depositar",
+  const movimiento = {
+    id: Date.now(),
+    tipo: "deposito",
     monto: monto,
-    descripcion: txtDescripcion.value,
-    fecha: new Date().toLocaleString()
-  })
+    descripcion: txtDescripcion.value.trim(),
+    fecha: new Date().toISOString()
+  }
+  registrarMovimiento(usuario, movimiento)
   
-  guardarUsuario(usuario)
   mostrarAlerta("Depósito realizado correctamente.", "success")
-  window.location.href = "home.html"
+  setTimeout(() => {
+    window.location.href = "home.html"
+  }, 1200)
 }
 
 function validarMonto(monto) {
   if(isNaN(monto)) {
     mostrarAlerta("Ingrese un monto válido.", "danger")
-    return
+    return false
   }
   
   if(monto <= 0) {
     mostrarAlerta("El monto debe ser mayor que cero.", "danger")
-    return
+    return false
   }
-}
-
-function registrarMovimiento() {
-
+  return true
 }

@@ -18,9 +18,13 @@ function ocultarAlerta() {
 }
 
 function formatearMoneda(valor) {
-  return "$ " + valor.toLocaleString();
+  return "$ " + valor.toLocaleString("es-CL");
 }
 
 function obtenerFecha() {
   return new Date().toLocaleString();
+}
+
+function formatearFecha(fechaISO) {
+  return new Date(fechaISO).toLocaleString("es-CL")
 }
